@@ -52,50 +52,50 @@
       inC = 0;
       inT = 0;
       bfC = 0;
-      document.GetElementById("Hp").innerHTML="HP" + pHp;
+      document.getElementById("Hp").innerHTML="HP" + pHp;
       
       encounter = Math.floor((Math.random * 9) + 1);
       switch(encounter) {
         case 1:
           bfC = 1;
-          document.GetElementById("pic").src="Dungeon_Crawler_Nr.999_Chest.png";
+          document.getElementById("pic").src="Dungeon_Crawler_Nr.999_Chest.png";
           break;
          case 2:
-          document.GetElementById("pic").src="Dungeon_Crawler_Nr.999_Chest.png";
+          document.getElementById("pic").src="Dungeon_Crawler_Nr.999_Chest.png";
           bfC = 1;
           break;
          case 3:
-          document.GetElementById("pic").src="Dungeon_Crawler_Nr.999_Chest.png";
+          document.getElementById("pic").src="Dungeon_Crawler_Nr.999_Chest.png";
           bfC = 1;
           break;
         case 4:
-          document.GetElementById("pic").src="Dungeon_Crawler_Nr.999_Pit.png";
+          document.getElementById("pic").src="Dungeon_Crawler_Nr.999_Pit.png";
           inT = dex;
           break;
         case 5:
-          document.GetElementById("pic").src="Dungeon_Crawler_Nr.999_Rusty_Lever.png";
+          document.getElementById("pic").src="Dungeon_Crawler_Nr.999_Rusty_Lever.png";
           inT = str;
           break;
         case 6:
-          document.GetElementById("pic").src="Dungeon_Crawler_Nr.999_Door.png";
+          document.getElementById("pic").src="Dungeon_Crawler_Nr.999_Door.png";
           inT = lck;
           break;
         case 7:
-          document.GetElementById("pic").src="Dungeon_Crawler_Nr.999_Dwarf.png";
+          document.getElementById("pic").src="Dungeon_Crawler_Nr.999_Dwarf.png";
           inC = 1;
           ebAtk = 5;
           eHp = 15;
           eAc = 15;
           break;
         case 8:
-          document.GetElementById("pic").src="Dungeon_Crawler_Nr.999_Mummy.png";
+          document.getElementById("pic").src="Dungeon_Crawler_Nr.999_Mummy.png";
           inC = 1;
           ebAtk = 7;
           eHp = 15;
           eAc = 12;
           break;
         case 9:
-          document.GetElementById("pic").src="Dungeon_Crawler_Nr.999_Skeleton.png";
+          document.getElementById("pic").src="Dungeon_Crawler_Nr.999_Skeleton.png";
           inC = 1;
           ebAtk = 10;
           eHp = 15;
