@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html>
+<body onload="gamestart()">
+  
+  <p id="events"></p>
+  <p id="Hp"></p>
+  <button onclick="attack()">Attack</button>
+  <button onclick="retreat()">Retreat</button>
+  <button onclick="action()">Action</button>
+  <button onclick="heal_potion()">Healthpotion</button>
+  <button onclick="heal_salve()">Healingsalve</button>
+  <button onclick="godess`_blessing()">Godess` Blessing</button>
+  
+  <script>
+    
+    var pAtk;
+    var eAtk;
+    var pbAtk;
+    var ebAtk;
+    var dex;
+    var str;
+    var lck;
+    var pHp;
+    var eHp;
+    var gb;
+    var hs;
+    var hP;
+    var inC;
+    var inT;
+    var bfC;
+    var armHp;
+    var legHp;
+    var chestHp;
+    var roll
+    var gbroll
+    var encounter;
+    
+    function gamestart() {
+      pbAtk = 5;
+      dex = 0;
+      str = 0;
+      lck = 0;
+      pHp = 50;
+      hP = 1;
+      hs = 1;
+      gb = 1;
+      armHp = 15;
+      legHp = 15;
+      chestHp = 20;
+      inC = 0;
+      inT = 0;
+      bfC = 0;
+      
+      encounter = Math.floor((Math.random * 9) + 1)
+      switch(encounter) {
+        case 1:
+          bfC = 1;
+          break;
+         case 2:
+          bfC = 1;
+          break;
+         case 3:
+          bfC = 1;
+          break;
+        case 4:
+          inT = dex;
+          break;
+        case 5:
+          inT = str;
+          break;
+        case 6:
+          inT = lck;
+        case 7:
+          inC = 1;
+          ebAtk = 5;
+          eHp = 20;
+          break;
+        case 8:
+          inC = 1;
+          ebAtk = 10;
+          eHp = 10;
+          break;
+        case 9:
+          inC = 1;
+          ebAtk = 7;
+          eHp = 15;
+          break;
+      }
+    }
+           
+  </script>
+</body>
+</html>
 
