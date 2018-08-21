@@ -3,7 +3,7 @@
 <body onload="gamestart()">
   
   <img id="pic" src="Dungeon_Crawler_Nr.999_Loading_Error.png" alt="Dungeon" width="500" height="500" border="0">
-  <p id="events">WHYYYYYYYYYY</p>
+  <p id="events"></p>
   <p id="Hp"></p>
   <button onclick="attack()">Attack</button>
   <button onclick="retreat()">Retreat</button>
@@ -52,6 +52,7 @@
       inC = 0;
       inT = 0;
       bfC = 0;
+      document.GetElementById("Hp").innerHTML="HP" + pHp;
       
       encounter = Math.floor((Math.random * 9) + 1);
       switch(encounter) {
@@ -99,8 +100,8 @@
           eHp = 15;
           eAc = 10;
           break;
+        default:
        }
-      document.GetElementById("Hp").insideHTML="HP" + pHp;
     }
            
   </script>
