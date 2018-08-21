@@ -1,2 +1,2 @@
 # Dungeon_Crawler_Nr.999
-document.GetElementById("pic").src=" 	Dungeon_Crawler_Nr.999_Chest.png"
+https://freakn00b.github.io/Dungeon_Crawler_Nr.999/
