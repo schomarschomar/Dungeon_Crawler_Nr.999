@@ -173,13 +173,13 @@
           document.getElementById("events").innerHTML="You failed to retreat, but the Enemy missed!";
         }
           else {
-            eATK = Math.floor((Math.random * ebATK) + ebATK - 5);
-            pHp = pHp - eATK;
-            if (Hp > 0) {
+            eAtk = Math.floor((Math.random * ebAtk) + ebAtk - 5);
+            pHp = pHp - eAtk;
+            if (pHp > 0) {
           document.getElementById("events").innerHTML="You failed to retreat and took " + eATK + " Damage"; 
               show_Hp();
             }
-            if (Hp < 1) {
+            if (pHp < 1) {
           document.getElementById("events").innerHTML="You failed to retreat and Died!";
               alert ("You failed to retreat and died on Floor " + Floor + " of the Dungeon!");
               gamestart();
