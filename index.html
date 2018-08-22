@@ -3,7 +3,7 @@
 <body onload="gamestart()">
   
   <img id="pic" src="Dungeon_Crawler_Nr.999_Loading_Error.png" alt="Dungeon" width="500" height="500" border="0">
-  <p id="events"></p>
+  <p id="events">sweg</p>
   <p id="Hp"></p>
   <button onclick="attack()">Attack</button>
   <button onclick="retreat()">Retreat</button>
@@ -111,6 +111,7 @@
           pHp = 50;
           document.getElementById("Hp").innerHTML="HP " + pHp;
           hP = hP - 1;
+          document.getElementById("consumeables").innerHTML="Healthpotion x" + hP + " Healingsalve x" + hs + " Godess` Blessing x" + gb;
           }
     }
            
