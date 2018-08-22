@@ -16,6 +16,7 @@
   
   <script>
     
+    var Floor;
     var pAtk;
     var eAtk;
     var pbAtk;
@@ -28,6 +29,7 @@
     var gb;
     var hs;
     var hP;
+    var retreated;
     var inC;
     var inT;
     var bfC;
@@ -41,6 +43,7 @@
     
     function gamestart() {
       pbAtk = 5;
+      Floor = 1;
       dex = 0;
       str = 0;
       lck = 0;
@@ -109,12 +112,43 @@
       if (hP > 0) {
           
           pHp = 50;
-          document.getElementById("Hp").innerHTML="HP " + pHp;
           hP = hP - 1;
+          document.getElementById("Hp").innerHTML="HP " + pHp;
+          document.getElementById("events").innerHTML="Healthpotion used";
           document.getElementById("consumeables").innerHTML="Healthpotion x" + hP + " Healingsalve x" + hs + " Godess` Blessing x" + gb;
           }
+      else {
+       document.getElementById("events").innerHTML="Out of Healthpotions";
+      }
     }
-           
+    function retreat()    {
+      if (inC == 1) {
+      roll = Math.floor((Math.random * 20) + 1);
+      if (roll + lck > 14) {
+        retreated = 1;
+      }
+        else {
+        roll = Math.floor((Math.random * 20) + 1);
+        if (6 + dex > roll) {
+          document.getElementById("events").innerHTML="You failed to retreat, but the Enemy missed!";
+        }
+          else {
+            eATK = Math.floor((Math.random * ebATK) + ebATK - 5);
+            pHp = pHp - eATK;
+            if (Hp > 0) {
+          document.getElementById("events").innerHTML="You failed to retreat and took " + eATK + " Damage";    
+            }
+            if (Hp < 1) {
+          document.getElementById("events").innerHTML="You failed to retreat and Died!";
+              alert ("You failed to retreat and died on Floor " + Floor + " of the Dungeon!");
+              gamestart;
+            }
+          }
+      }
+      else {
+        document.getElementById("events").innerHTML="Not in Combat";
+      }
+    }
   </script>
 </body>
 </html>
