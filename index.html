@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html>
+  <style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
 <body onload="gamestart()">
   
   <img id="pic" src="Dungeon_Crawler_Nr.999_Loading_Error.png" alt="Dungeon" width="500" height="500" border="0">
-  <p id="events"></p>
-  <p id="Hp"></p>
+  <p id="events">bru</p>
   <button onclick="attack()">Attack</button>
   <button onclick="retreat()">Retreat</button>
   <button onclick="action()">Action</button>
@@ -23,7 +37,7 @@
     var dex;
     var str;
     var lck;
-    var pHp;
+    var pHpx2;
     var eHp;
     var gb;
     var hs;
@@ -39,14 +53,16 @@
     var gbroll;
     var encounter;
     var eAc;
+    var width;
     
     function gamestart() {
       pbAtk = 5;
+      width = 100;
       Floor = 1;
       dex = 0;
       str = 0;
       lck = 0;
-      pHp = 50;
+      pHpx2 = 100;
       hP = 1;
       hs = 1;
       gb = 1;
@@ -56,7 +72,7 @@
       inC = 0;
       inT = 0;
       bfC = 0;
-      document.getElementById("Hp").innerHTML="HP " + pHp;
+      show_Hp();
       document.getElementById("hP").innerHTML="Healthpotion x1"
       document.getElementById("hs").innerHTML="Healingsalve x1"
       document.getElementById("gb").innerHTML="Godess` Blessing x1"
@@ -109,12 +125,32 @@
           break;
        }
     }
+    function show_Hp() {
+  var elem = document.getElementById("myBar");   
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= pHpx2) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 0,5  + ' Hp';
+    }
+    if (width <= pHpx2) {
+      clearInterval(id);
+    } else {
+      width--; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 0,5  + ' Hp';
+    }
+  }
+}
     function heal_potion() {
       if (hP > 0) {
           
           pHp = 50;
           hP = hP - 1;
-          document.getElementById("Hp").innerHTML="HP " + pHp;
+          show_Hp();
           document.getElementById("events").innerHTML="Healthpotion used";
           document.getElementById("hP").innerHTML="Healthpotions x" + hP;
           }
@@ -137,12 +173,13 @@
             eATK = Math.floor((Math.random * ebATK) + ebATK - 5);
             pHp = pHp - eATK;
             if (Hp > 0) {
-          document.getElementById("events").innerHTML="You failed to retreat and took " + eATK + " Damage";    
+          document.getElementById("events").innerHTML="You failed to retreat and took " + eATK + " Damage"; 
+              show_Hp();
             }
             if (Hp < 1) {
           document.getElementById("events").innerHTML="You failed to retreat and Died!";
               alert ("You failed to retreat and died on Floor " + Floor + " of the Dungeon!");
-              gamestart;
+              gamestart();
             }
           }
       }
