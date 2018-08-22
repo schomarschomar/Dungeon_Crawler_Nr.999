@@ -3,7 +3,7 @@
 <body onload="gamestart()">
   
   <img id="pic" src="Dungeon_Crawler_Nr.999_Loading_Error.png" alt="Dungeon" width="500" height="500" border="0">
-  <p id="events">WHYYYYYYYYYYYY</p>
+  <p id="events"></p>
   <p id="Hp"></p>
   <button onclick="attack()">Attack</button>
   <button onclick="retreat()">Retreat</button>
@@ -11,6 +11,8 @@
   <button onclick="heal_potion()">Healthpotion</button>
   <button onclick="heal_salve()">Healingsalve</button>
   <button onclick="godess_blessing()">Godess` Blessing</button>
+  <p>Potions</p>
+  <p id="consumeables"></p>
   
   <script>
     
@@ -53,7 +55,7 @@
       inT = 0;
       bfC = 0;
       document.getElementById("Hp").innerHTML="HP " + pHp;
-      
+      document.getElementById("consumeables").innerHTML="Healthpotion x1 Healingsalve x1 Godess` Blessing x1";
       encounter = Math.floor((Math.random * 9) + 1);
       switch(encounter) {
         case 1:
@@ -104,14 +106,12 @@
        }
     }
     function heal_potion() {
-      
       if (hP > 0) {
           
           pHp = 50;
           document.getElementById("Hp").innerHTML="HP " + pHp;
           hP = hP - 1;
           }
-      
     }
            
   </script>
