@@ -21,7 +21,7 @@
   <div id="myProgress">
   <div id="myBar">10%</div>
 </div>
-  <p id="events">nghwghu</p>
+  <p id="events">kbhb nkndvbjh</p>
   <button onclick="attack()">Attack</button>
   <button onclick="retreat()">Retreat</button>
   <button onclick="action()">Action</button>
@@ -155,7 +155,9 @@
           hP = hP - 1;
           show_Hp();
           document.getElementById("events").innerHTML="Healthpotion used";
-          document.getElementById("consumables").innerHTML="Healthpotion x" + hP + " Healingsalve x" + hs + " Godess` Blessing x" + gb;
+         document.getElementById("hP").value="Healthpotion x" + hP;
+      document.getElementById("hs").value="Healingsalve x" + hs;
+      document.getElementById("gb").value="Godess` Blessing x" + hP;
           }
       else {
        document.getElementById("events").innerHTML="Out of Healthpotions";
