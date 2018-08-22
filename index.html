@@ -133,16 +133,15 @@
   var id = setInterval(frame, 10);
   function frame() {
     if (width >= pHp * 2) {
-      clearInterval(id);
-    } else {
-      width++; 
-      elem.style.width = width; 
-      elem.innerHTML = width * 0.5  + ' Hp';
-    }
-    if (width <= pHp * 2) {
+      if (width <= pHp * 2) {
       clearInterval(id);
     } else {
       width--; 
+      elem.style.width = width; 
+      elem.innerHTML = width * 0.5  + ' Hp';
+    }
+    } else {
+      width++; 
       elem.style.width = width; 
       elem.innerHTML = width * 0.5  + ' Hp';
     }
