@@ -26,10 +26,9 @@
   <button onclick="retreat()">Retreat</button>
   <button onclick="action()">Action</button>
   <p>Inventory</p>
-  <button onclick="heal_potion()">Healthpotion</button>
-  <button onclick="heal_salve()">Healingsalve</button>
-  <button onclick="godess_blessing()">Godess` Blessing</button>
-  <p id="consumables"></p>
+  <button id="hP" onclick="heal_potion()">Healthpotion</button>
+  <button id="hs" onclick="heal_salve()">Healingsalve</button>
+  <button id="gb" onclick="godess_blessing()">Godess` Blessing</button>
   
   <script>
     
@@ -77,7 +76,9 @@
       inT = 0;
       bfC = 0;
       show_Hp();
-      document.getElementById("consumables").innerHTML="Healthpotion x" + hP + " Healingsalve x" + hs + " Godess` Blessing x" + gb;
+      document.getElementById("hP").value="Healthpotion x" + hP;
+      document.getElementById("hs").value="Healingsalve x" + hs;
+      document.getElementById("gb").value="Godess` Blessing x" + hP;
       encounter = Math.floor((Math.random * 9) + 1);
       switch(encounter) {
         case 1:
