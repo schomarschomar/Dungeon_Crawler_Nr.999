@@ -101,8 +101,17 @@
           eHp = 15;
           eAc = 10;
           break;
-        default:
        }
+    }
+    function heal_potion() {
+      
+      if (hP > 0) {
+          
+          pHp = 50;
+          document.getElementById("Hp").innerHTML="HP " + pHp;
+          hP = hP - 1;
+          }
+      
     }
            
   </script>
