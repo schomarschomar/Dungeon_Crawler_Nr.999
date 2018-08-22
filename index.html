@@ -8,11 +8,10 @@
   <button onclick="attack()">Attack</button>
   <button onclick="retreat()">Retreat</button>
   <button onclick="action()">Action</button>
-  <button onclick="heal_potion()">Healthpotion</button>
-  <button onclick="heal_salve()">Healingsalve</button>
-  <button onclick="godess_blessing()">Godess` Blessing</button>
   <p>Inventory</p>
-  <p id="consumeables"></p>
+  <button id="hP" onclick="heal_potion()">Healthpotion</button>
+  <button id="hs" onclick="heal_salve()">Healingsalve</button>
+  <button id="gb" onclick="godess_blessing()">Godess` Blessing</button>
   
   <script>
     
@@ -58,7 +57,9 @@
       inT = 0;
       bfC = 0;
       document.getElementById("Hp").innerHTML="HP " + pHp;
-      document.getElementById("consumeables").innerHTML="Healthpotion x1 Healingsalve x1 Godess` Blessing x1";
+      document.getElementById("hP").innerHTML="Healthpotion x1"
+      document.getElementById("hs").innerHTML="Healingsalve x1"
+      document.getElementById("gb").innerHTML="Godess` Blessing x1"
       encounter = Math.floor((Math.random * 9) + 1);
       switch(encounter) {
         case 1:
@@ -115,7 +116,7 @@
           hP = hP - 1;
           document.getElementById("Hp").innerHTML="HP " + pHp;
           document.getElementById("events").innerHTML="Healthpotion used";
-          document.getElementById("consumeables").innerHTML="Healthpotion x" + hP + " Healingsalve x" + hs + " Godess` Blessing x" + gb;
+          document.getElementById("hP").innerHTML="Healthpotions x" + hP;
           }
       else {
        document.getElementById("events").innerHTML="Out of Healthpotions";
