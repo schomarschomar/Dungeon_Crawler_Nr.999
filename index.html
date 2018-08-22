@@ -2,7 +2,7 @@
 <html>
   <style>
 #myProgress {
-  width: 100%;
+  width: 25%;
   background-color: #ddd;
 }
 
@@ -21,14 +21,15 @@
   <div id="myProgress">
   <div id="myBar">10%</div>
 </div>
-  <p id="events">bru</p>
+  <p id="events">WHYYYYYYYYYYYYYYYYYYYYYYYYYY</p>
   <button onclick="attack()">Attack</button>
   <button onclick="retreat()">Retreat</button>
   <button onclick="action()">Action</button>
   <p>Inventory</p>
-  <button id="hP" onclick="heal_potion()">Healthpotion</button>
-  <button id="hs" onclick="heal_salve()">Healingsalve</button>
-  <button id="gb" onclick="godess_blessing()">Godess` Blessing</button>
+  <button onclick="heal_potion()">Healthpotion</button>
+  <button onclick="heal_salve()">Healingsalve</button>
+  <button onclick="godess_blessing()">Godess` Blessing</button>
+  <p id="consumables"></p>
   
   <script>
     
@@ -40,7 +41,7 @@
     var dex;
     var str;
     var lck;
-    var pHpx2;
+    var pHp;
     var eHp;
     var gb;
     var hs;
@@ -65,7 +66,7 @@
       dex = 0;
       str = 0;
       lck = 0;
-      pHpx2 = 100;
+      pHp = 100;
       hP = 1;
       hs = 1;
       gb = 1;
@@ -76,9 +77,7 @@
       inT = 0;
       bfC = 0;
       show_Hp();
-      document.getElementById("hP").innerHTML="Healthpotion x1";
-      document.getElementById("hs").innerHTML="Healingsalve x1";
-      document.getElementById("gb").innerHTML="Godess` Blessing x1";
+      document.getElementById("consumables").innerHTML="Healthpotion x" + hP + " Healingsalve x" + hs + " Godess` Blessing x" + gb;
       encounter = Math.floor((Math.random * 9) + 1);
       switch(encounter) {
         case 1:
@@ -132,19 +131,19 @@
   var elem = document.getElementById("myBar");   
   var id = setInterval(frame, 10);
   function frame() {
-    if (width >= pHpx2) {
+    if (width >= pHp * 2) {
       clearInterval(id);
     } else {
       width++; 
       elem.style.width = width + '%'; 
-      elem.innerHTML = width * 0,5  + ' Hp';
+      elem.innerHTML = width * 0.5  + ' Hp';
     }
-    if (width <= pHpx2) {
+    if (width <= pHp * 2) {
       clearInterval(id);
     } else {
       width--; 
       elem.style.width = width + '%'; 
-      elem.innerHTML = width * 0,5  + ' Hp';
+      elem.innerHTML = width * 0.5  + ' Hp';
     }
   }
 }
@@ -155,7 +154,7 @@
           hP = hP - 1;
           show_Hp();
           document.getElementById("events").innerHTML="Healthpotion used";
-          document.getElementById("hP").innerHTML="Healthpotions x" + hP;
+          document.getElementById("consumables").innerHTML="Healthpotion x" + hP + " Healingsalve x" + hs + " Godess` Blessing x" + gb;
           }
       else {
        document.getElementById("events").innerHTML="Out of Healthpotions";
